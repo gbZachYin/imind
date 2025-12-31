@@ -1,0 +1,7 @@
+h5py==3.11.0
+pandas==2.0.3
+timm==0.5.4
+torchmetrics==1.4.1
+tqdm==4.66.5
+transformers==4.44.2
+wandb==0.17.8
