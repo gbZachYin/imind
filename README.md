@@ -6,6 +6,7 @@
 
 This is the official implementation of **iMIND**, presented at **NeurIPS 2025**. iMIND introduces a dual-decoding framework for novel multi-subject invariant neural decoding. By combining the representative power of Masked Autoencoders with a specialized orthonormal disentanglement strategy, iMIND effectively bridges the gap between individual neural variability and universal semantic decoding.
 
+![imind](https://zachyin.com/imind/images/arch.png)
 
 ## 📢 News
 * **Jan. 2026:** 🚀 Code and checkpoints are released!
