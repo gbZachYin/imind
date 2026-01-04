@@ -1,7 +1,10 @@
 wandb
-nsd/
-saved_ckpt/
-results/
+nsd/*
+!nsd/.gitkeep
+saved_ckpt/*
+!saved_ckpt/.gitkeep
+results/*
+!results/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
