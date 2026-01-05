@@ -192,26 +192,6 @@ class OSExtractor(nn.Module):
         return X_obj, X_subj
     
     
-class OSExtractor_gate(nn.Module):
-    
-    def __init__(self, n_patches, obj_ratio_min=0.05):
-        super().__init__()
-        
-        self.obj_ratio = nn.Parameter(torch.tensor(.5))
-        self.idx = nn.Parameter(torch.arange(n_patches).float(), requires_grad=False)
-        self.n_patches = n_patches
-        self.obj_ratio_min = obj_ratio_min
-        
-    def forward(self, X):
-
-        split_idx = torch.clamp(self.obj_ratio, self.obj_ratio_min, 1 - self.obj_ratio_min) * self.n_patches
-        obj_mask = F.sigmoid(split_idx - self.idx).round().unsqueeze(1)
-        X_obj =  obj_mask * X 
-        X_subj = (1 - obj_mask) * X 
-        
-        return X_obj, X_subj 
-
-
 class BrainEncoderBases(nn.Module):
     
     def __init__(self, fmri_encoder, dim_fmri,dim_obj, dim_subj, n_obj, n_subj, n_heads, g_pool=True, use_img_feature=False, norm_layer=nn.LayerNorm):
